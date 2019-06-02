@@ -1,0 +1,126 @@
+.app {
+    max-width: 1024px;
+    margin: 0 auto;
+
+    h1 {
+        text-align: center;
+    }
+}
+
+.numpad,
+.grid {
+    list-style: none;
+    padding: 0;
+    font-size: 3em;
+}
+
+.grid-wrap {
+    position: relative;
+
+    &:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .win-overlay {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        height: calc(100% + 20px);
+        width: 100%;
+        background: #fff;
+        z-index: 1;
+        opacity: 0.9;
+        text-align: center;
+
+        h2 {
+            font-size: 100px;
+        }
+    }
+}
+
+.grid {
+    width: 95%;
+    margin: 0 auto;
+
+    &__cell {
+        cursor: pointer;
+        position: relative;
+        float: left;
+        width: 10%;
+        padding-bottom: 10%;
+        margin: -1px 0 0 -1px;
+        border: 1px solid black;
+
+        &--col-0 {
+            clear: left;
+            border-left-width: 4px;
+        }
+
+        &--col-2,
+        &--col-5,
+        &--col-8 {
+            border-right-width: 4px;
+        }
+
+        &--row-0 {
+            border-top-width: 4px;
+        }
+
+        &--row-2,
+        &--row-5,
+        &--row-8 {
+            border-bottom-width: 4px;
+        }
+
+        &.is-selected {
+            background: #93caff;
+        }
+
+        &.is-disabled {
+            background: #eaeaea;
+        }
+    }
+
+    &__number {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        line-height: 0;
+    }
+}
+
+.numpad {
+    clear: both;
+    padding-top: 40px;
+    margin: 0 auto;
+    width: 40%;
+
+    &__key {
+        cursor: pointer;
+        position: relative;
+        float: left;
+        width: 31%;
+        padding-bottom: 33%;
+        margin: -2px 0 0 -2px;
+        border: 2px solid black;
+
+        &:nth-child(3n + 1) {
+            clear: left;
+        }
+    }
+
+    &__number {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        line-height: 0;
+    }
+}
