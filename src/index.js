@@ -10,18 +10,7 @@ class App extends React.Component {
 
         this.state = {
             sortedBy: null,
-            results: [
-                {
-                    name: 'Iberostar Grand Salome',
-                    price: 1136.50
-                }, {
-                    name: 'Aguamarina Golf Hotel',
-                    price: 696.80
-                }, {
-                    name: 'Las Piramides Resort',
-                    price: 499.99
-                }
-            ]
+            results: window.holidayResults
         }
 
         this.sortBy = this.sortBy.bind(this);
@@ -46,9 +35,12 @@ class App extends React.Component {
 
     render () {
         return <div>
-            <h1 className='page-title'>Listing App</h1>
-            <Sorter sortBy={this.sortBy} sortedBy={this.state.sortedBy} />
-            <ResultsList results={this.state.results} />
+            <div className='left-col'>
+                <Sorter sortBy={this.sortBy} sortedBy={this.state.sortedBy} />
+            </div>
+            <div className='right-col'>
+                <ResultsList results={this.state.results} />
+            </div>
         </div>
     }
 }

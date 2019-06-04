@@ -1,13 +1,14 @@
 import React from 'react';
+import { Holiday } from './Holiday';
 
 class ResultsList extends React.Component {
     render () {
         return (
-            <div>
+            <div className='results'>
                 <ul>
                     {this.props.results.map((result, index) => {
                         return (
-                            <li key={index}>{result.name} is {result.price}</li>
+                            <Holiday result={result} key={index} />
                         );
                     })}
                 </ul>
