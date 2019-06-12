@@ -9,23 +9,24 @@
 body {
     padding: 0;
     margin: 0;
-    background: #ccf;
+    background: url('../images/background.png') 0 0 repeat-x;
+    font-family: sans-serif;
 }
 
 .app {
-    max-width: 1024px;
+    max-width: 1180px;
     margin: 0 auto;
     padding-top: 40px;
 }
 
 .left-col {
     float: left;
-    width: 30%;
+    width: 25%;
 }
 
 .right-col {
     float: right;
-    width: 70%;
+    width: 68%;
 }
 
 .sorter {
@@ -37,11 +38,11 @@ body {
         li {
             background: #fff;
             margin-bottom: 2px;
-            padding: 10px;
+            padding: 20px 15px;
             cursor: pointer;
 
             &.selected {
-                background: blue;
+                background: #17317f;
                 color: #fff;
             }
         }
@@ -51,7 +52,7 @@ body {
 .results {
     > ul {
         list-style: none;
-        margin: 0 0 0 35px;
+        margin: 0;
         padding: 0;
 
         li {
@@ -59,24 +60,60 @@ body {
         }
     }
 
-    .result-item {
+    .item-outer,
+    .item-viewmore {
         @include clearfix();
         
         background: #fff;
     }
 
+    .item-viewmore {
+        label {
+            display: block;
+            width: 60%;
+            height: 35px;
+            background: #fff;
+        }
+    }
+
     .info {
-        width: 60%;
+        width: 40%;
         float: right;
+        box-sizing: border-box;
+        padding: 20px;
 
         h2 {
             margin: 0;
+            color: #17317f;
+        }
+
+        .book-button {
+            background: #fedc07;
+            color: #17317f;
+            display: block;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 3px;
+
+            > span {
+                display: block;
+            }
+
+            .price {
+                font-size: 24px;
+            }
         }
     }
 
     .image {
-        width: 40%;
+        width: 60%;
         float: left;
+
+        > img {
+            display: block;
+            max-width: 100%;
+        }
     }
 
     .view-checkbox {
@@ -87,7 +124,7 @@ body {
         display: none;
     }
 
-    .view-checkbox:checked + .description {
+    .view-checkbox:checked + label + .description {
         display: block;
     }
 }
